@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B0F0A0012F8E5DDE00000001 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F0A0022F8E5DDE00000002 /* main.m */; };
+		B0F0A00D2F8E5DDE0000000D /* MP42Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A925AA8218378D7900BE84D4 /* MP42Foundation.framework */; };
+		B0F0A00F2F8E5DDE0000000F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */; };
 		1DDD582D0DA1D0D100B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD582A0DA1D0D100B32029 /* MainMenu.xib */; };
 		4AFFB6D22DF751110099E229 /* Subler.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 4AFFB6D12DF751110099E229 /* Subler.sdef */; };
 		61CEC0CE1E7569E4000FECC1 /* MultiSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61CEC0CC1E7569E4000FECC1 /* MultiSelectView.xib */; };
@@ -193,6 +196,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B0F0A0022F8E5DDE00000002 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLI/SublerCLI/main.m; sourceTree = "<group>"; };
+		B0F0A0042F8E5DDE00000004 /* SublerCLI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SublerCLI; sourceTree = BUILT_PRODUCTS_DIR; };
 		1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		4AFFB6D12DF751110099E229 /* Subler.sdef */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Subler.sdef; sourceTree = "<group>"; };
@@ -454,6 +459,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B0F0A0052F8E5DDE00000005 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0F0A00F2F8E5DDE0000000F /* Foundation.framework in Frameworks */,
+				B0F0A00D2F8E5DDE0000000D /* MP42Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D15AC330486D014006FF6A4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -468,6 +482,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B0F0A0032F8E5DDE00000003 /* CLI */ = {
+			isa = PBXGroup;
+			children = (
+				B0F0A00C2F8E5DDE0000000C /* SublerCLI */,
+			);
+			path = CLI;
+			sourceTree = "<group>";
+		};
+		B0F0A00C2F8E5DDE0000000C /* SublerCLI */ = {
+			isa = PBXGroup;
+			children = (
+				B0F0A0022F8E5DDE00000002 /* main.m */,
+			);
+			path = SublerCLI;
+			sourceTree = "<group>";
+		};
 		1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -482,6 +512,7 @@
 			isa = PBXGroup;
 			children = (
 				8D15AC370486D014006FF6A4 /* Subler.app */,
+				B0F0A0042F8E5DDE00000004 /* SublerCLI */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -495,6 +526,7 @@
 				2A37F4AFFDCFA73011CA2CEA /* Other Sources */,
 				2A37F4B8FDCFA73011CA2CEA /* Resources */,
 				2A37F4C3FDCFA73011CA2CEA /* Frameworks */,
+				B0F0A0032F8E5DDE00000003 /* CLI */,
 				19C28FB0FE9D524F11CA2CBB /* Products */,
 			);
 			name = MP4Sub;
@@ -760,6 +792,24 @@
 			productReference = 8D15AC370486D014006FF6A4 /* Subler.app */;
 			productType = "com.apple.product-type.application";
 		};
+		B0F0A0072F8E5DDE00000007 /* SublerCLI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0F0A00B2F8E5DDE0000000B /* Build configuration list for PBXNativeTarget "SublerCLI" */;
+			buildPhases = (
+				B0F0A0062F8E5DDE00000006 /* Sources */,
+				B0F0A0052F8E5DDE00000005 /* Frameworks */,
+				B0F0A00E2F8E5DDE0000000E /* Embed MP42Foundation */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B0F0A0082F8E5DDE00000008 /* PBXTargetDependency */,
+			);
+			name = SublerCLI;
+			productName = SublerCLI;
+			productReference = B0F0A0042F8E5DDE00000004 /* SublerCLI */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -780,6 +830,9 @@
 								enabled = 0;
 							};
 						};
+					};
+					B0F0A0072F8E5DDE00000007 = {
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -809,6 +862,7 @@
 			projectRoot = "";
 			targets = (
 				8D15AC270486D014006FF6A4 /* Subler */,
+				B0F0A0072F8E5DDE00000007 /* SublerCLI */,
 			);
 		};
 /* End PBXProject section */
@@ -884,7 +938,34 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+	/* Begin PBXShellScriptBuildPhase section */
+		B0F0A00E2F8E5DDE0000000E /* Embed MP42Foundation */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${BUILT_PRODUCTS_DIR}/MP42Foundation.framework",
+			);
+			name = "Embed MP42Foundation";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/Frameworks/MP42Foundation.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "FRAMEWORK_DEST=\"${TARGET_BUILD_DIR}/Frameworks\"\nmkdir -p \"${FRAMEWORK_DEST}\"\nrsync -a \"${BUILT_PRODUCTS_DIR}/MP42Foundation.framework\" \"${FRAMEWORK_DEST}\"\n";
+		};
+	/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		B0F0A0062F8E5DDE00000006 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0F0A0012F8E5DDE00000001 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D15AC300486D014006FF6A4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -982,6 +1063,11 @@
 
 /* Begin PBXTargetDependency section */
 		A925AA8718378DC400BE84D4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MP42Foundation;
+			targetProxy = A925AA8618378DC400BE84D4 /* PBXContainerItemProxy */;
+		};
+		B0F0A0082F8E5DDE00000008 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MP42Foundation;
 			targetProxy = A925AA8618378DC400BE84D4 /* PBXContainerItemProxy */;
@@ -1396,6 +1482,54 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		B0F0A0092F8E5DDE00000009 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(SRCROOT)",
+					"$(BUILT_PRODUCTS_DIR)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B0F0A00A2F8E5DDE0000000A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(SRCROOT)",
+					"$(BUILT_PRODUCTS_DIR)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		C05733C808A9546B00998B17 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1679,6 +1813,15 @@
 			buildConfigurations = (
 				C05733CC08A9546B00998B17 /* Debug */,
 				C05733CD08A9546B00998B17 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0F0A00B2F8E5DDE0000000B /* Build configuration list for PBXNativeTarget "SublerCLI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0F0A0092F8E5DDE00000009 /* Debug */,
+				B0F0A00A2F8E5DDE0000000A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

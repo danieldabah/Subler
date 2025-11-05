@@ -19,8 +19,27 @@ If you already cloned without submodules and need to add the submodules manually
 ```
 git submodule update --init --recursive
 ```
-Open `Subler.xcodeproj` in XCode
+Open `Subler.xcodeproj` in Xcode.
 
 Build and run the project by selecting the 'Subler' scheme (`Product` -> `Scheme` -> `Subler`) and clicking the 'Run' button in Xcode’s toolbar.
+
+### Command-line interface
+
+The repository also ships with a lightweight CLI wrapper around MP42Foundation.
+
+1. In Xcode choose the `SublerCLI` scheme and build (`Product` -> `Build`).
+2. The compiled tool lives at `DerivedData/.../Build/Products/<configuration>/SublerCLI` alongside a `Frameworks` directory containing the bundled `MP42Foundation.framework`.
+3. Run it directly from that location or copy both the executable and `Frameworks` directory to another folder.
+
+Basic usage:
+
+```
+SublerCLI input.mkv \
+  --output output.m4v \
+  --force-hvc1 \
+  --overwrite
+```
+
+The CLI remuxes without transcoding MP4-safe video, preserves every audio and subtitle track (converting non-MP4-safe formats like FLAC/Vorbis or PGS to AAC/tx3g automatically), and accepts additional switches such as `--audio-bitrate`, `--mixdown`, `--optimize`, and `--no-progress`. Run `SublerCLI --help` to see the full option list.
 
 
