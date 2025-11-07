@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B0F0A0012F8E5DDE00000001 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F0A0022F8E5DDE00000002 /* main.m */; };
-		B0F0A00D2F8E5DDE0000000D /* MP42Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A925AA8218378D7900BE84D4 /* MP42Foundation.framework */; };
-		B0F0A00F2F8E5DDE0000000F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */; };
 		1DDD582D0DA1D0D100B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD582A0DA1D0D100B32029 /* MainMenu.xib */; };
 		4AFFB6D22DF751110099E229 /* Subler.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 4AFFB6D12DF751110099E229 /* Subler.sdef */; };
 		61CEC0CE1E7569E4000FECC1 /* MultiSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61CEC0CC1E7569E4000FECC1 /* MultiSelectView.xib */; };
@@ -143,6 +140,9 @@
 		A9F680A81FD06E0200018371 /* OutputPrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F680A61FD06E0200018371 /* OutputPrefsViewController.swift */; };
 		A9F7F8E01837C44B0036AE7E /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9ED7B21180067A2008FD3A8 /* IOKit.framework */; };
 		A9FC6FF61EF2E3280034CCED /* TheTVDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FC6FF51EF2E3280034CCED /* TheTVDBService.swift */; };
+		B0F0A0012F8E5DDE00000001 /* CLI/SublerCLI/main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F0A0022F8E5DDE00000002 /* CLI/SublerCLI/main.m */; };
+		B0F0A00D2F8E5DDE0000000D /* MP42Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A925AA8218378D7900BE84D4 /* MP42Foundation.framework */; };
+		B0F0A00F2F8E5DDE0000000F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */; };
 		CD71FEA612F1B62600F0A98D /* MetadataSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD71FEA412F1B62600F0A98D /* MetadataSearch.xib */; };
 		CDE8E452174CBBD4009410B5 /* iTunesStores.json in Resources */ = {isa = PBXBuildFile; fileRef = CDE8E451174CBBD4009410B5 /* iTunesStores.json */; };
 /* End PBXBuildFile section */
@@ -196,8 +196,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		B0F0A0022F8E5DDE00000002 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLI/SublerCLI/main.m; sourceTree = "<group>"; };
-		B0F0A0042F8E5DDE00000004 /* SublerCLI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SublerCLI; sourceTree = BUILT_PRODUCTS_DIR; };
 		1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		4AFFB6D12DF751110099E229 /* Subler.sdef */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Subler.sdef; sourceTree = "<group>"; };
@@ -455,19 +453,12 @@
 		A9F5820B1DCC861F005F3E92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9F680A61FD06E0200018371 /* OutputPrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OutputPrefsViewController.swift; path = Classes/OutputPrefsViewController.swift; sourceTree = "<group>"; };
 		A9FC6FF51EF2E3280034CCED /* TheTVDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TheTVDBService.swift; path = Classes/MetadataImporters/TheTVDBService.swift; sourceTree = "<group>"; };
+		B0F0A0022F8E5DDE00000002 /* CLI/SublerCLI/main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLI/SublerCLI/main.m; sourceTree = "<group>"; };
+		B0F0A0042F8E5DDE00000004 /* SublerCLI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SublerCLI; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDE8E451174CBBD4009410B5 /* iTunesStores.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = iTunesStores.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		B0F0A0052F8E5DDE00000005 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B0F0A00F2F8E5DDE0000000F /* Foundation.framework in Frameworks */,
-				B0F0A00D2F8E5DDE0000000D /* MP42Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8D15AC330486D014006FF6A4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -479,25 +470,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B0F0A0052F8E5DDE00000005 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0F0A00F2F8E5DDE0000000F /* Foundation.framework in Frameworks */,
+				B0F0A00D2F8E5DDE0000000D /* MP42Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B0F0A0032F8E5DDE00000003 /* CLI */ = {
-			isa = PBXGroup;
-			children = (
-				B0F0A00C2F8E5DDE0000000C /* SublerCLI */,
-			);
-			path = CLI;
-			sourceTree = "<group>";
-		};
-		B0F0A00C2F8E5DDE0000000C /* SublerCLI */ = {
-			isa = PBXGroup;
-			children = (
-				B0F0A0022F8E5DDE00000002 /* main.m */,
-			);
-			path = SublerCLI;
-			sourceTree = "<group>";
-		};
 		1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -741,6 +725,22 @@
 			name = PropertyView;
 			sourceTree = "<group>";
 		};
+		B0F0A0032F8E5DDE00000003 /* CLI */ = {
+			isa = PBXGroup;
+			children = (
+				B0F0A00C2F8E5DDE0000000C /* SublerCLI */,
+			);
+			path = CLI;
+			sourceTree = "<group>";
+		};
+		B0F0A00C2F8E5DDE0000000C /* SublerCLI */ = {
+			isa = PBXGroup;
+			children = (
+				B0F0A0022F8E5DDE00000002 /* CLI/SublerCLI/main.m */,
+			);
+			path = SublerCLI;
+			sourceTree = "<group>";
+		};
 		CD71FF1A12F1C46900F0A98D /* MetadataImporters */ = {
 			isa = PBXGroup;
 			children = (
@@ -817,7 +817,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 2600;
+				LastUpgradeCheck = 2610;
 				TargetAttributes = {
 					8D15AC270486D014006FF6A4 = {
 						LastSwiftMigration = 1020;
@@ -938,7 +938,7 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-	/* Begin PBXShellScriptBuildPhase section */
+/* Begin PBXShellScriptBuildPhase section */
 		B0F0A00E2F8E5DDE0000000E /* Embed MP42Foundation */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -955,17 +955,9 @@
 			shellPath = /bin/sh;
 			shellScript = "FRAMEWORK_DEST=\"${TARGET_BUILD_DIR}/Frameworks\"\nmkdir -p \"${FRAMEWORK_DEST}\"\nrsync -a \"${BUILT_PRODUCTS_DIR}/MP42Foundation.framework\" \"${FRAMEWORK_DEST}\"\n";
 		};
-	/* End PBXShellScriptBuildPhase section */
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		B0F0A0062F8E5DDE00000006 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B0F0A0012F8E5DDE00000001 /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8D15AC300486D014006FF6A4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1056,6 +1048,14 @@
 				A9C09C9C1F9A08A9007939EE /* MultiSelectViewController.swift in Sources */,
 				A9AE70E11F2F7B3D001CF27C /* MetadataHelper.swift in Sources */,
 				A90057B61F99DE2700FA4ED1 /* ComboBoxCellView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0F0A0062F8E5DDE00000006 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0F0A0012F8E5DDE00000001 /* CLI/SublerCLI/main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1485,8 +1485,10 @@
 		B0F0A0092F8E5DDE00000009 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1494,14 +1496,12 @@
 					"$(SRCROOT)",
 					"$(BUILT_PRODUCTS_DIR)",
 				);
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1509,8 +1509,10 @@
 		B0F0A00A2F8E5DDE0000000A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1518,14 +1520,12 @@
 					"$(SRCROOT)",
 					"$(BUILT_PRODUCTS_DIR)",
 				);
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -1537,6 +1537,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				ASSETCATALOG_COMPILER_OPTIMIZATION = space;
+				AUTOMATION_APPLE_EVENTS = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -1548,7 +1549,11 @@
 				CURRENT_PROJECT_VERSION = 1.9.1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = "";
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_FILE_ACCESS_MOVIES_FOLDER = readwrite;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_USER_SELECTED_FILES = readwrite;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
@@ -1564,6 +1569,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.9.1;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
@@ -1583,6 +1589,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				ASSETCATALOG_COMPILER_OPTIMIZATION = space;
+				AUTOMATION_APPLE_EVENTS = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -1593,7 +1600,11 @@
 				CURRENT_PROJECT_VERSION = 1.9.1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = "";
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_FILE_ACCESS_MOVIES_FOLDER = readwrite;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_USER_SELECTED_FILES = readwrite;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
@@ -1608,6 +1619,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.9.1;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
@@ -1704,6 +1716,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "";
 				RUN_CLANG_STATIC_ANALYZER = NO;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_STRICT_CONCURRENCY = targeted;
 				SWIFT_VERSION = 5.0;
 			};
@@ -1789,6 +1802,7 @@
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "c11 gnu++14";
 				OTHER_CFLAGS = "";
 				RUN_CLANG_STATIC_ANALYZER = NO;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_STRICT_CONCURRENCY = targeted;
@@ -1799,6 +1813,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B0F0A00B2F8E5DDE0000000B /* Build configuration list for PBXNativeTarget "SublerCLI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0F0A0092F8E5DDE00000009 /* Debug */,
+				B0F0A00A2F8E5DDE0000000A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C05733C708A9546B00998B17 /* Build configuration list for PBXNativeTarget "Subler" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1813,15 +1836,6 @@
 			buildConfigurations = (
 				C05733CC08A9546B00998B17 /* Debug */,
 				C05733CD08A9546B00998B17 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B0F0A00B2F8E5DDE0000000B /* Build configuration list for PBXNativeTarget "SublerCLI" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B0F0A0092F8E5DDE00000009 /* Debug */,
-				B0F0A00A2F8E5DDE0000000A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
