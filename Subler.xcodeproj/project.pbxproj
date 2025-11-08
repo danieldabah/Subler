@@ -140,7 +140,7 @@
 		A9F680A81FD06E0200018371 /* OutputPrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F680A61FD06E0200018371 /* OutputPrefsViewController.swift */; };
 		A9F7F8E01837C44B0036AE7E /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9ED7B21180067A2008FD3A8 /* IOKit.framework */; };
 		A9FC6FF61EF2E3280034CCED /* TheTVDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FC6FF51EF2E3280034CCED /* TheTVDBService.swift */; };
-		B0F0A0012F8E5DDE00000001 /* CLI/SublerCLI/main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F0A0022F8E5DDE00000002 /* CLI/SublerCLI/main.m */; };
+		B0F0A0012F8E5DDE00000001 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F0A0022F8E5DDE00000002 /* main.m */; };
 		B0F0A00D2F8E5DDE0000000D /* MP42Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A925AA8218378D7900BE84D4 /* MP42Foundation.framework */; };
 		B0F0A00F2F8E5DDE0000000F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */; };
 		CD71FEA612F1B62600F0A98D /* MetadataSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD71FEA412F1B62600F0A98D /* MetadataSearch.xib */; };
@@ -453,7 +453,7 @@
 		A9F5820B1DCC861F005F3E92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9F680A61FD06E0200018371 /* OutputPrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OutputPrefsViewController.swift; path = Classes/OutputPrefsViewController.swift; sourceTree = "<group>"; };
 		A9FC6FF51EF2E3280034CCED /* TheTVDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TheTVDBService.swift; path = Classes/MetadataImporters/TheTVDBService.swift; sourceTree = "<group>"; };
-		B0F0A0022F8E5DDE00000002 /* CLI/SublerCLI/main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLI/SublerCLI/main.m; sourceTree = "<group>"; };
+		B0F0A0022F8E5DDE00000002 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B0F0A0042F8E5DDE00000004 /* SublerCLI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SublerCLI; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDE8E451174CBBD4009410B5 /* iTunesStores.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = iTunesStores.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -736,7 +736,7 @@
 		B0F0A00C2F8E5DDE0000000C /* SublerCLI */ = {
 			isa = PBXGroup;
 			children = (
-				B0F0A0022F8E5DDE00000002 /* CLI/SublerCLI/main.m */,
+				B0F0A0022F8E5DDE00000002 /* main.m */,
 			);
 			path = SublerCLI;
 			sourceTree = "<group>";
@@ -949,11 +949,11 @@
 			);
 			name = "Embed MP42Foundation";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/Frameworks/MP42Foundation.framework",
+				"${SYMROOT}/Frameworks/MP42Foundation.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "FRAMEWORK_DEST=\"${TARGET_BUILD_DIR}/Frameworks\"\nmkdir -p \"${FRAMEWORK_DEST}\"\nrsync -a \"${BUILT_PRODUCTS_DIR}/MP42Foundation.framework\" \"${FRAMEWORK_DEST}\"\n";
+			shellScript = "FRAMEWORK_DEST=\"${SYMROOT}/Frameworks\"\nmkdir -p \"${FRAMEWORK_DEST}\"\nif [ -d \"${BUILT_PRODUCTS_DIR}/MP42Foundation.framework\" ]; then\n    ditto \"${BUILT_PRODUCTS_DIR}/MP42Foundation.framework\" \"${FRAMEWORK_DEST}/MP42Foundation.framework\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1486,6 +1486,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
@@ -1496,13 +1497,19 @@
 					"$(SRCROOT)",
 					"$(BUILT_PRODUCTS_DIR)",
 				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/MP42Foundation/contrib/mp4v2/",
+				);
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				OTHER_CFLAGS = "-fmodule-map-file=$(SRCROOT)/MP42Foundation/contrib/mp4v2/module.modulemap";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/MP42Foundation/contrib/mp4v2/";
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 			};
 			name = Debug;
 		};
@@ -1510,6 +1517,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
@@ -1520,13 +1528,19 @@
 					"$(SRCROOT)",
 					"$(BUILT_PRODUCTS_DIR)",
 				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/MP42Foundation/contrib/mp4v2/",
+				);
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				OTHER_CFLAGS = "-fmodule-map-file=$(SRCROOT)/MP42Foundation/contrib/mp4v2/module.modulemap";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/MP42Foundation/contrib/mp4v2/";
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 			};
 			name = Release;
 		};

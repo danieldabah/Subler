@@ -159,7 +159,7 @@ int main(int argc, const char * argv[]) {
         }
 
         MP42File *mp4 = [[MP42File alloc] init];
-        [mp4.metadata merge:importer.metadata];
+        [mp4.metadata mergeMetadata:importer.metadata];
 
         NSMutableArray<MP42Track *> *addedTracks = [NSMutableArray array];
 
