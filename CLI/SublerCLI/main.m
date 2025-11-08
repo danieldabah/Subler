@@ -169,6 +169,10 @@ int main(int argc, const char * argv[]) {
                     fprintf(stderr, "Skipping non-MP4-safe video track %u\n", track.trackId);
                     continue;
                 }
+                if (trackNeedConversion(track.format)) {
+                    fprintf(stderr, "Skipping video track %u that requires conversion (conversion not supported for video tracks)\n", track.trackId);
+                    continue;
+                }
                 [mp4 addTrack:track];
                 [addedTracks addObject:track];
             } else if ([track isKindOfClass:[MP42AudioTrack class]]) {
